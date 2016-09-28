@@ -1,12 +1,15 @@
-from TestCase import *
+from WasRun import *
 
 
 class TestCaseTest(TestCase):
 
+    def setUp(self):
+        self.test = WasRun("testMethod")
+
     def testRunning(self):
-        test = WasRun("testMethod")
-        assert (not test.wasRun)
-        print test.wasRun
-        test.run()
-        assert test.wasRun
-        print test.wasRun
+        self.test.run()
+        assert self.test.wasRun
+
+    def testSetup(self):
+        self.test.run()
+        assert self.test.wasSetUp
